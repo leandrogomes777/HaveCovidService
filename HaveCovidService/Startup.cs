@@ -31,7 +31,8 @@ namespace HaveCovidService
             //   opt.UseInMemoryDatabase("HaveCovid"));
 
             services.AddDbContext<HaveCovidContext>(options =>
-                    options.UseSqlServer(Configuration.GetConnectionString("HaveCovidContext")));
+               options.UseSqlServer(Configuration.GetConnectionString("HaveCovidContext"))
+            .EnableSensitiveDataLogging());
             services.AddControllers();
 
             services.AddSwaggerGen();
